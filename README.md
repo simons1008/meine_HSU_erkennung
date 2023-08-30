@@ -9,8 +9,8 @@ Auf dem PC müssen folgende Bibliotheken installiert sein:
 Diese sind auf https://pypi.org/ verfügbar. 
 
 ## Ausführung auf dem PC
-1. Auf dem PC wird das Programm mein_Klassifikator_MicroPython.py gestartet. Das Programm importiert die Bibliotheken und die Daten. Die Daten sind 75 Bilder der Buchstaben H, S und U. Jedes Bild besteht aus 256 Grauwerten. Dazu habe ich die Buchstaben in 5 Ansichten mit einer WebCam fotografiert und angepasst. 
-2. Das Programm erstellt einen RandomForestClassifier und trainiert ihn mit 70 % der Daten. Die Auswahl erfolgt zufällig. Anschließend wird der Klassifikator auf die restlichen 30 % der Daten angewandt und die Erkennungsleistung angegeben (score). Der Klassifikator darf nicht zu komplex werden. Deshalb sind wir mit einer Erkennungsleistung von unter 100 % zufrieden. 
+1. Auf dem PC wird das Programm mein_Klassifikator_MicroPython.py gestartet. Das Programm importiert die Bibliotheken und die Daten. Die Daten sind 15 Bilder der Buchstaben H, S und U. Jeder Buchstabe wurde in 5 Ansichten mit einer WebCam fotografiert und angepasst. Jedes Bild besteht aus 256 Grauwerten.  
+2. Das Programm erstellt einen RandomForestClassifier und trainiert ihn mit 70 % der Daten. Die Auswahl erfolgt zufällig (mit Initialwert). Anschließend wird der Klassifikator auf die restlichen 30 % der Daten angewandt und die Erkennungsleistung angegeben (score). Wird das Training wiederholt, beobachten wir Erkennungsleistungen von unter 100 %. Das liegt wahrscheinlich an unserem sehr kleinen Datensatz.   
 3. Danach wird der Klassifikator nach MicroPython portiert. Das Ergebnis ist die Datei random_forest.py.  
 
 ## Ausführung auf dem ESP32
@@ -27,7 +27,7 @@ Diese sind auf https://pypi.org/ verfügbar.
 Sind alle Differenzen Null, so wurden alle Buchstaben richtig erkannt. 
 
 ## Testdaten als Bild anzeigen
-Die Testdaten in HSU_test_data.py sind ein Array mit der Dimension (23, 256). Es sind 23 angepasste Fotos der Buchstaben H, S und U, die durch eine Reihe mit 256 Grauwerten dargestellt werden. HSU_test_labels.py enthält die zugehörigen Labels.   
+Die Testdaten in HSU_test_data.py sind ein Array mit der Dimension (5, 256). Es sind 5 angepasste Fotos der Buchstaben H, S und U, die durch eine Reihe mit 256 Grauwerten dargestellt werden. HSU_test_labels.py enthält die zugehörigen Labels.   
 
 Das PC-Programm show_HSU_test_data.py stellt die ursprünglichen 16 x 16 Grauwerte wieder her. Anschließend wird für jeden Buchstaben eine Funktion aus der matplotlib aufgerufen, die den Buchstaben als Bild anzeigt. HSU_test_data.png zeigt das Ergebnis. 
 

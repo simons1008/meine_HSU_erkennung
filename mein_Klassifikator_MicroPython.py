@@ -16,10 +16,10 @@ labels = np.load("HSU_labels.npy")
 
 # Daten in Trainingsdaten und Testdaten aufspalten
 X_train, X_test, y_train, y_test = train_test_split(
-    data, labels, test_size=0.3, random_state = 0, shuffle=True)
+    data, labels, test_size=0.3, random_state = 1, shuffle=True)
 
 # Klassifikator erstellen
-clf = RandomForestClassifier(n_estimators=20, max_leaf_nodes=20)
+clf = RandomForestClassifier(n_estimators=7, max_leaf_nodes=20)
 
 # Mit den Trainingsdaten trainieren (fit - dazupassen)
 clf.fit(X_train, y_train)
