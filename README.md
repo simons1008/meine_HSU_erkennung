@@ -9,7 +9,7 @@ Auf dem PC müssen folgende Bibliotheken installiert sein:
 Diese sind auf https://pypi.org/ verfügbar. 
 
 ## Ausführung auf dem PC
-1. Auf dem PC wird das Programm mein_Klassifikator_MicroPython.py gestartet. Das Programm importiert die Bibliotheken und die Daten. Die  sind 75 Bilder der Buchstaben H, S und U. Jedes Bild besteht aus 256 Grauwerten. Dazu habe ich die Buchstaben in 5 Ansichten mit einer WebCam fotografiert und angepasst. 
+1. Auf dem PC wird das Programm mein_Klassifikator_MicroPython.py gestartet. Das Programm importiert die Bibliotheken und die Daten. Die Daten sind 75 Bilder der Buchstaben H, S und U. Jedes Bild besteht aus 256 Grauwerten. Dazu habe ich die Buchstaben in 5 Ansichten mit einer WebCam fotografiert und angepasst. 
 2. Das Programm erstellt einen RandomForestClassifier und trainiert ihn mit 70 % der Daten. Die Auswahl erfolgt zufällig. Anschließend wird der Klassifikator auf die restlichen 30 % der Daten angewandt und die Erkennungsleistung angegeben (score). Der Klassifikator darf nicht zu komplex werden. Deshalb sind wir mit einer Erkennungsleistung von unter 100 % zufrieden. 
 3. Danach wird der Klassifikator nach MicroPython portiert. Das Ergebnis ist die Datei random_forest.py.  
 
